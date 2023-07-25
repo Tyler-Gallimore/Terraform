@@ -27,3 +27,4 @@ resource "aws_instance" "InstanceName" {
 #terraform init once configeration file is created
 #terraform plan shows what will be performed
 #terraform apply to execute the code
+#terraform destroy to delete all resources created with terraform
