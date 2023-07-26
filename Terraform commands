@@ -1,0 +1,14 @@
+#Initialize Terraform Working Directory
+terraform init
+
+#Validating a configuraion
+terraform validate
+
+#Genenerating a Terraform Plan
+terraform plan
+
+#Applying a Terraform Plan
+terraform apply
+
+#Terraform Destroy
+terraform destroy
