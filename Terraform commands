@@ -12,3 +12,10 @@ terraform apply
 
 #Terraform Destroy
 terraform destroy
+
+#Save a terraform plan to a file
+terraform plan -out (name)
+
+#You can apply per saved plan
+terraform apply (name)
+
