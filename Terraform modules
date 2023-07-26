@@ -1,0 +1,7 @@
+#Template
+module "(Module_name)" {
+  #Block body
+  source = (module_source)
+  (input_name) = (description) #Inputs
+  (input_name) = (description) #Inputs
+}
