@@ -1,0 +1,26 @@
+#Template
+variable "(variable_name)" {
+  # Block body
+  type = (variable_type)
+  description = (description)
+  default = (expression)
+  senitive = (true/false)
+  validation = (rules)
+}
+
+#Example
+variable "variables_sub_cidr" {
+ description = "CIDR Block for the Variables Subnet"
+ type = string
+ #default = "IP CIDR"
+}
+variable "variables_sub_az" {
+ description = "Availability Zone used Variables Subnet"
+ type = string
+ #default = "us-east-1a"
+}
+variable "variables_sub_auto_ip" {
+ description = "Set Automatic IP Assigment for Variables Subnet"
+ type = bool
+ #default = true
+}
