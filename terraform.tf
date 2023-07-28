@@ -9,7 +9,11 @@ terraform {
       source = "hashicorp/http"
       version = "2.1.0"
     }
+    random = {
+      source = "hashicorp/random"
+      version = "3.1.0"
+    }
   }
 }
 
-#Used to pin a certain version of terraform
+#Used to pin a certain version of terraform and add providers
