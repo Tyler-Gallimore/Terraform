@@ -1,5 +1,5 @@
 #Initialize Terraform Working Directory
-terraform init
+terraform init (-upgrade can be used to update the provider versions specified)
 
 #Validating a configuraion
 terraform validate
