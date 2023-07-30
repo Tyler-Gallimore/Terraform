@@ -12,14 +12,54 @@ provider "aws" {
     region = "us-east-1"
 }
 
-resource "aws_instance" "InstanceName" {
-    ami = "ami-0f34c5ae932e6f0e4"
+data "aws_key_pair" "existing_key_pair" {
+  key_name = "LUIT"
+}
+resource "aws_instance" "Jenkins_server" {
+    ami = "ami-053b0d53c279acc90"
     instance_type = "t2.micro"
-    #subnet_id = "public subnet"
-    #vpc_security_group_ids = "SG id"
+    security_groups = [aws_security_group.Jenkins.name]
+    key_name = data.aws_key_pair.existing_key_pair.key_name
+    user_data = file("Jenkins.sh")
     tags = {
-        Name = "HelloWorld"
+        Name = "Jenkins Web"
     }
+}
+
+resource "aws_security_group" "Jenkins" {
+    name = "Allow SSH and network traffic"
+    vpc_id = "vpc-0e91d041ce7c92c5c"
+    
+    ingress {
+        description = "SSH from IP"
+        from_port = 22
+        to_port = 22
+        protocol = "tcp"
+        cidr_blocks = ["35.145.180.2/32"]
+    }
+    
+    ingress {
+        description = "TCP traffic to 8080"
+        from_port = 8080
+        to_port = 8080
+        protocol = "tcp"
+        cidr_blocks = ["0.0.0.0/0"]
+    }
+    
+    egress {
+        from_port = 0
+        to_port = 0
+        protocol = "-1"
+        cidr_blocks = ["0.0.0.0/0"]
+    }
+    
+    tags = {
+        Name = "allow_traffic"
+    }
+}
+
+resource "aws_s3_bucket" "Jenkins_bucket" {
+    
 }
 
 #Notes:
