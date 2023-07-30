@@ -13,7 +13,7 @@ provider "aws" {
 }
 
 data "aws_key_pair" "existing_key_pair" {
-  key_name = "LUIT"
+  key_name = "key_pair"
 }
 resource "aws_instance" "Jenkins_server" {
     ami = "ami-053b0d53c279acc90"
@@ -28,14 +28,14 @@ resource "aws_instance" "Jenkins_server" {
 
 resource "aws_security_group" "Jenkins" {
     name = "Allow SSH and network traffic"
-    vpc_id = "vpc-0e91d041ce7c92c5c"
+    vpc_id = "vpc_id"
     
     ingress {
         description = "SSH from IP"
         from_port = 22
         to_port = 22
         protocol = "tcp"
-        cidr_blocks = ["35.145.180.2/32"]
+        cidr_blocks = ["IP address from connecting device"]
     }
     
     ingress {
