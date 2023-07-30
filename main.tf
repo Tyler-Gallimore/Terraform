@@ -13,7 +13,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "InstanceName" {
-    ami = "ami-05548f9cecf47b442"
+    ami = "ami-0f34c5ae932e6f0e4"
     instance_type = "t2.micro"
     #subnet_id = "public subnet"
     #vpc_security_group_ids = "SG id"
