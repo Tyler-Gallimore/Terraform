@@ -19,3 +19,5 @@ terraform plan -out (name)
 #You can apply per saved plan
 terraform apply (name)
 
+#Format the code
+terraform fmt
