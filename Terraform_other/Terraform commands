@@ -30,3 +30,13 @@ terraform import (address) (ID)
 
 #Show everything in state file
 terraform state list
+
+#Show all/current wrokspace
+terraform workspace show
+terraform workspace list
+
+#Create a new workspace
+terraform workspace new (name)
+
+#Switch workspace
+terraform workspace select (name)
