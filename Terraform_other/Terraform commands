@@ -21,3 +21,6 @@ terraform apply (name)
 
 #Format the code
 terraform fmt
+
+#Mark resource to be re-created
+terraform taint (ID)
