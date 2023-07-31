@@ -24,3 +24,6 @@ terraform fmt
 
 #Mark resource to be re-created
 terraform taint (ID)
+
+#Import existing resources into terraform
+terraform import (address) (ID)
