@@ -27,3 +27,6 @@ terraform taint (ID)
 
 #Import existing resources into terraform
 terraform import (address) (ID)
+
+#Show everything in state file
+terraform state list
