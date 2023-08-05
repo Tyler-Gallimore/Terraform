@@ -1,6 +1,6 @@
 resource "aws_security_group" "apache" {
   name   = "Allow SSH and network traffic"
-  vpc_id = "vpc-0e91d041ce7c92c5c"
+  vpc_id = var.vpc
 
   ingress {
     description = "SSH from IP"
