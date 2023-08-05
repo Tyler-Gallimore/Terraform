@@ -16,5 +16,5 @@ variable "user_data" {
 variable "vpc" {
     description = "VPC"
     type = string
-    default = "vpc-0e91d041ce7c92c5c"
+    default = "vpc_id"
 }
