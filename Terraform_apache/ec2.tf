@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 data "aws_key_pair" "existing_key_pair" {
-  key_name = "LUIT"
+  key_name = "key_name"
 }
 resource "aws_autoscaling_group" "apache" {
   availability_zones = ["us-east-1a", "us-east-1b"]
