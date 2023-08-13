@@ -1,6 +1,5 @@
 resource "aws_vpc" "project_vpc" {
   cidr_block = "10.0.0.0/16"
-
 }
 
 resource "aws_subnet" "public_subnet_1" {
@@ -12,7 +11,6 @@ resource "aws_subnet" "public_subnet_1" {
   tags = {
     Name = "public_1"
   }
-
 }
 
 resource "aws_subnet" "public_subnet_2" {
@@ -24,7 +22,6 @@ resource "aws_subnet" "public_subnet_2" {
   tags = {
     Name = "public_2"
   }
-
 }
 
 resource "aws_subnet" "private_subnet_1" {
@@ -47,7 +44,6 @@ resource "aws_subnet" "private_subnet_2" {
   tags = {
     Name = "private_2"
   }
-
 }
 
 resource "aws_route_table" "public_route" {
@@ -56,7 +52,6 @@ resource "aws_route_table" "public_route" {
   tags = {
     Name = "public"
   }
-
 }
 
 resource "aws_route_table" "private_route" {
@@ -65,26 +60,22 @@ resource "aws_route_table" "private_route" {
   tags = {
     Name = "private"
   }
-
 }
 
 resource "aws_internet_gateway" "gw" {
   vpc_id = aws_vpc.project_vpc.id
-
 }
 
 resource "aws_route" "public_subnet_1_route" {
   route_table_id         = aws_route_table.public_route.id
   destination_cidr_block = "0.0.0.0/0"
   gateway_id             = aws_internet_gateway.gw.id
-
 }
 
 resource "aws_route" "public_subnet_2_route" {
   route_table_id         = aws_route_table.public_route.id
   destination_cidr_block = "0.0.0.0/0"
   gateway_id             = aws_internet_gateway.gw.id
-
 }
 
 
