@@ -13,11 +13,7 @@ variable "user_data" {
   type        = string
   default     = "IyEvYmluL2Jhc2gKeXVtIGNoZWNrLXVwZGF0ZQp5dW0gLXkgaW5zdGFsbCBmaXJld2FsbGQKZmlyZXdhbGwtY21kIC0tcGVybWFuZW50IC0tYWRkLXNlcnZpY2U9aHR0cApmaXJld2FsbC1jbWQgLS1wZXJtYW5lbnQgLS1hZGQtc2VydmljZT1odHRwcwpmaXJld2FsbC1jbWQgLS1yZWxvYWQKeXVtIC15IGluc3RhbGwgaHR0cGQKYmFzaCAtYyAnZWNobyAiSGVsbG8sIFdvcmxkISIgPiAvdmFyL3d3dy9odG1sL2luZGV4Lmh0bWwnCnN5c3RlbWN0bCBlbmFibGUgaHR0cGQKc3lzdGVtY3RsIHN0YXJ0IGh0dHBk"
 }
-variable "vpc" {
-  description = "VPC"
-  type        = string
-  default     = "vpc-0e91d041ce7c92c5c"
-}
+
 variable "instance_class" {
   description = "RDS instance"
   type        = string
